@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Support and privacy information for Catfolio / Gatoteca."
+    />
+    <title>Catfolio / Gatoteca — Support & Privacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cardboard: #ad8f6b;
+        --cardboard-deep: #7a6147;
+        --paper: #faf5eb;
+        --paper-shadow: #dfd2bd;
+        --ink: #382e24;
+        --muted-ink: #5c4d3d;
+        --coral: #b84233;
+        --mint-tape: #9ac7a6;
+        --yellow-tape: #e1d195;
+        --line: #c7ad87;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
+        font-size: 1.12rem;
+        line-height: 1.45;
+        background-color: var(--cardboard);
+        background-image:
+          radial-gradient(ellipse at 50% -15%, rgba(255,255,255,.2), transparent 41%),
+          radial-gradient(ellipse at center, transparent 32%, rgba(61,42,26,.28) 125%),
+          repeating-linear-gradient(0deg, rgba(89,66,43,.06) 0 1px, transparent 1px 5px),
+          repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 7px);
+      }
+
+      a { color: inherit; }
+
+      button, a { -webkit-tap-highlight-color: transparent; }
+
+      .wrap { width: min(100% - 2rem, 960px); margin: 0 auto; }
+
+      .site-header { padding: 1.35rem 0 .65rem; }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: .65rem;
+        color: var(--paper);
+        text-decoration: none;
+        text-shadow: 0 2px 0 rgba(65, 46, 30, .35);
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 2.65rem;
+        height: 2.35rem;
+        border: 2px solid rgba(250,245,235,.75);
+        border-radius: 52% 48% 48% 50%;
+        background: rgba(54, 42, 31, .22);
+        transform: rotate(-4deg);
+      }
+
+      .brand strong {
+        font-family: "Permanent Marker", "Marker Felt", cursive;
+        font-size: 1.35rem;
+        letter-spacing: .02em;
+      }
+
+      .language-switcher {
+        display: inline-flex;
+        overflow: hidden;
+        border: 2px solid rgba(250,245,235,.78);
+        border-radius: 999px;
+        background: rgba(56,46,36,.18);
+        box-shadow: 0 2px 0 rgba(57,43,30,.25);
+      }
+
+      .language-switcher button {
+        min-width: 3.35rem;
+        padding: .36rem .7rem;
+        border: 0;
+        color: var(--paper);
+        font: inherit;
+        font-size: .92rem;
+        cursor: pointer;
+        background: transparent;
+      }
+
+      .language-switcher button[aria-pressed="true"] {
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 1.25rem;
+        align-items: center;
+        margin-top: .55rem;
+        padding: clamp(1.65rem, 5vw, 3rem);
+        overflow: hidden;
+        border: 1px solid rgba(99,75,49,.18);
+        border-radius: 7px 12px 9px 5px;
+        background-color: var(--paper);
+        background-image:
+          repeating-linear-gradient(0deg, transparent 0 25px, rgba(156,132,97,.07) 26px 27px),
+          radial-gradient(rgba(111,81,47,.1) .65px, transparent .8px);
+        background-size: auto, 5px 5px;
+        box-shadow: 0 10px 0 rgba(74,56,38,.2), 0 18px 35px rgba(61,43,27,.18);
+      }
+
+      .hero::before, .paper-card::before {
+        position: absolute;
+        z-index: 1;
+        width: 6.2rem;
+        height: 1.35rem;
+        content: "";
+        opacity: .78;
+        background: var(--yellow-tape);
+        box-shadow: inset 0 0 0 1px rgba(121,106,51,.14);
+      }
+
+      .hero::before {
+        top: .9rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(-2deg);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin: 0 0 .6rem;
+        color: var(--coral);
+        font-family: "Permanent Marker", "Marker Felt", cursive;
+        font-size: .95rem;
+        letter-spacing: .04em;
+        transform: rotate(-1deg);
+      }
+
+      h1, h2, h3 { margin: 0; line-height: 1.1; }
+
+      h1, h2 {
+        font-family: "Permanent Marker", "Marker Felt", cursive;
+        font-weight: 400;
+      }
+
+      h1 { max-width: 12ch; font-size: clamp(2.3rem, 7vw, 4.15rem); }
+      h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+      h3 { font-size: 1.45rem; }
+
+      .hero p { max-width: 39rem; margin: .85rem 0 0; color: var(--muted-ink); font-size: 1.3rem; }
+
+      .cat-illustration {
+        width: 100%;
+        max-width: 180px;
+        justify-self: end;
+        object-fit: contain;
+        filter: drop-shadow(0 7px 2px rgba(68, 48, 28, .17));
+        transform: rotate(3deg);
+      }
+
+      .navigation {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .7rem;
+        padding: 2rem 0 1.6rem;
+      }
+
+      .navigation a, .contact-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.8rem;
+        padding: .45rem 1.15rem;
+        border: 2px solid var(--ink);
+        border-radius: 5px 8px 6px 4px;
+        color: var(--ink);
+        font-size: 1.1rem;
+        text-decoration: none;
+        background: var(--paper);
+        box-shadow: 3px 4px 0 var(--cardboard-deep);
+        transform: rotate(-1deg);
+        transition: transform .15s ease, box-shadow .15s ease;
+      }
+
+      .navigation a:nth-child(even) { transform: rotate(1deg); }
+      .navigation a:hover, .navigation a:focus-visible, .contact-button:hover, .contact-button:focus-visible {
+        transform: translate(2px, 2px) rotate(0);
+        box-shadow: 1px 2px 0 var(--cardboard-deep);
+      }
+
+      main { padding-bottom: 3.5rem; }
+
+      .section { scroll-margin-top: 1rem; margin-top: 2.2rem; }
+      .section-heading { margin-bottom: 1rem; text-align: center; color: var(--paper); text-shadow: 0 2px 0 rgba(65,46,30,.3); }
+
+      .paper-card {
+        position: relative;
+        padding: clamp(1.35rem, 4vw, 2.25rem);
+        border: 1px solid rgba(99,75,49,.18);
+        border-radius: 9px 5px 11px 7px;
+        background-color: var(--paper);
+        background-image: radial-gradient(rgba(111,81,47,.09) .65px, transparent .8px);
+        background-size: 5px 5px;
+        box-shadow: 0 8px 0 rgba(74,56,38,.18), 0 14px 26px rgba(61,43,27,.13);
+      }
+
+      .paper-card::before {
+        top: -.65rem;
+        right: 9%;
+        width: 5.1rem;
+        background: var(--mint-tape);
+        transform: rotate(3deg);
+      }
+
+      .intro { margin: 0; font-size: 1.3rem; color: var(--muted-ink); }
+
+      .contact-box {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1.55rem;
+        padding: 1rem;
+        border: 2px dashed var(--line);
+        border-radius: 5px;
+        background: rgba(225,209,149,.24);
+      }
+
+      .mail-stamp {
+        display: grid;
+        place-items: center;
+        width: 3.1rem;
+        height: 3.1rem;
+        border: 2px solid var(--coral);
+        border-radius: 50%;
+        color: var(--coral);
+        font-size: 1.4rem;
+        transform: rotate(-9deg);
+      }
+
+      .contact-box p { margin: 0; }
+      .contact-box a { color: var(--coral); font-weight: 700; overflow-wrap: anywhere; }
+
+      .faq-list { display: grid; gap: .85rem; margin-top: 1.5rem; }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 6px 9px 7px 5px;
+        background: rgba(255,255,255,.35);
+      }
+
+      details:nth-child(even) { transform: rotate(.25deg); }
+      details[open] { background: #fffdf8; }
+
+      summary {
+        padding: .85rem 1rem;
+        font-size: 1.18rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      summary::marker { color: var(--coral); }
+      details p { margin: 0; padding: 0 1rem 1rem; color: var(--muted-ink); }
+
+      .privacy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+
+      .privacy-item {
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 6px 10px 7px 5px;
+        background: rgba(255,255,255,.38);
+      }
+
+      .privacy-item h3 { color: var(--coral); }
+      .privacy-item p { margin: .35rem 0 0; color: var(--muted-ink); }
+
+      .privacy-note { margin: 1.4rem 0 0; padding: .95rem 1rem; border-left: 4px solid var(--coral); background: rgba(184,66,51,.08); }
+
+      .contact-section { text-align: center; }
+      .contact-section p { max-width: 37rem; margin: .85rem auto 1.25rem; color: var(--muted-ink); font-size: 1.25rem; }
+      .contact-button { color: var(--paper); border-color: #8a3026; background: var(--coral); box-shadow: 3px 4px 0 #813126; }
+
+      footer {
+        padding: 1.25rem 0 2.2rem;
+        color: rgba(250,245,235,.9);
+        text-align: center;
+      }
+
+      footer p { margin: .15rem 0; }
+
+      .lang { display: none; }
+      .lang.is-active { display: block; }
+      .lang-inline { display: none; }
+      .lang-inline.is-active { display: inline; }
+
+      @media (max-width: 620px) {
+        .wrap { width: min(100% - 1.15rem, 960px); }
+        .site-header { padding-top: .8rem; }
+        .hero { grid-template-columns: 1fr; padding-top: 2.4rem; }
+        h1 { max-width: 100%; }
+        .hero p { font-size: 1.18rem; }
+        .cat-illustration { width: 130px; margin-top: -.3rem; }
+        .privacy-grid { grid-template-columns: 1fr; }
+      }
+
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap topbar">
+        <a class="brand" href="#top" aria-label="Catfolio home">
+          <span class="brand-mark" aria-hidden="true">🐾</span>
+          <strong>Catfolio</strong>
+        </a>
+        <div class="language-switcher" aria-label="Language selector">
+          <button type="button" data-language="pt" aria-pressed="true">PT</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="wrap">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow lang is-active" data-lang="pt">GATOTECA · PEQUENO DIÁRIO FELINO</p>
+          <p class="eyebrow lang" data-lang="en">CATFOLIO · A LITTLE FELINE JOURNAL</p>
+          <h1 id="hero-title">
+            <span class="lang is-active" data-lang="pt">Suporte &amp; Privacidade</span>
+            <span class="lang" data-lang="en">Support &amp; Privacy</span>
+          </h1>
+          <p class="lang is-active" data-lang="pt">Um cantinho para tirar dúvidas, encontrar ajuda e saber exatamente como a Gatoteca cuida — ou melhor, não coleta — seus dados.</p>
+          <p class="lang" data-lang="en">A little corner for answers, help, and a clear explanation of how Catfolio looks after — or rather, does not collect — your data.</p>
+        </div>
+        <img
+          class="cat-illustration"
+          src="file:///Users/vitorbruno/Downloads/Imagem_1_gerada__1_-removebg-preview.png"
+          alt="Catfolio mascot waving hello"
+        />
+      </section>
+
+      <nav class="navigation" aria-label="Page sections">
+        <a href="#support"><span class="lang is-active" data-lang="pt">Precisa de ajuda?</span><span class="lang" data-lang="en">Need help?</span></a>
+        <a href="#privacy"><span class="lang is-active" data-lang="pt">Privacidade</span><span class="lang" data-lang="en">Privacy</span></a>
+        <a href="#contact"><span class="lang is-active" data-lang="pt">Fale com a gente</span><span class="lang" data-lang="en">Contact us</span></a>
+      </nav>
+
+      <section id="support" class="section" aria-labelledby="support-title">
+        <h2 id="support-title" class="section-heading">
+          <span class="lang is-active" data-lang="pt">Suporte</span><span class="lang" data-lang="en">Support</span>
+        </h2>
+        <div class="paper-card">
+          <p class="intro lang is-active" data-lang="pt">A Gatoteca é o seu diário de encontros felinos: registre gatinhos, guarde memórias e acompanhe a sua coleção. Se algo não estiver funcionando como esperado, estou aqui para ajudar.</p>
+          <p class="intro lang" data-lang="en">Catfolio is your journal for feline encounters: log cats, save memories, and grow your collection. If something is not working as expected, I’m here to help.</p>
+
+          <div class="contact-box">
+            <div class="mail-stamp" aria-hidden="true">✉</div>
+            <p>
+              <span class="lang is-active" data-lang="pt">Escreva para</span><span class="lang" data-lang="en">Write to</span>
+              <a href="mailto:viktorbruno2006@gmail.com?subject=Catfolio%20Support">viktorbruno2006@gmail.com</a>
+              <span class="lang is-active" data-lang="pt"> e conte o que aconteceu.</span><span class="lang" data-lang="en"> and tell me what happened.</span>
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary><span class="lang is-active" data-lang="pt">Como adiciono um gato à minha Gatoteca?</span><span class="lang" data-lang="en">How do I add a cat to my Catfolio?</span></summary>
+              <p class="lang is-active" data-lang="pt">Toque no botão de adicionar, tire uma foto ou escolha uma imagem e preencha os detalhes que quiser. Cada registro vira uma lembrança no seu diário.</p>
+              <p class="lang" data-lang="en">Tap the add button, take a photo or choose one from your library, then add any details you like. Each entry becomes a memory in your journal.</p>
+            </details>
+            <details>
+              <summary><span class="lang is-active" data-lang="pt">Posso registrar o mesmo gato mais de uma vez?</span><span class="lang" data-lang="en">Can I log the same cat more than once?</span></summary>
+              <p class="lang is-active" data-lang="pt">Pode, sim. Cada encontro tem a sua própria história, então registros repetidos continuam no diário como memórias separadas.</p>
+              <p class="lang" data-lang="en">Absolutely. Every encounter has its own story, so repeat sightings stay in your journal as separate memories.</p>
+            </details>
+            <details>
+              <summary><span class="lang is-active" data-lang="pt">A câmera não está disponível. O que faço?</span><span class="lang" data-lang="en">The camera is unavailable. What should I do?</span></summary>
+              <p class="lang is-active" data-lang="pt">Verifique se a permissão da câmera está ativada em Ajustes › Catfolio. Você também pode continuar criando registros sem usar a câmera.</p>
+              <p class="lang" data-lang="en">Check that camera access is enabled in Settings › Catfolio. You can also keep creating entries without using the camera.</p>
+            </details>
+            <details>
+              <summary><span class="lang is-active" data-lang="pt">Como funciona a identificação de cor ou padrão?</span><span class="lang" data-lang="en">How does coat colour or pattern identification work?</span></summary>
+              <p class="lang is-active" data-lang="pt">A sugestão ajuda a descrever a pelagem do gatinho e pode não acertar sempre. Você pode revisar e escolher o padrão que fizer mais sentido para cada registro.</p>
+              <p class="lang" data-lang="en">The suggestion helps describe a cat’s coat and may not always be correct. You can review it and choose the pattern that makes the most sense for each entry.</p>
+            </details>
+            <details>
+              <summary><span class="lang is-active" data-lang="pt">Meus registros sumiram. Posso recuperá-los?</span><span class="lang" data-lang="en">My entries disappeared. Can I restore them?</span></summary>
+              <p class="lang is-active" data-lang="pt">Os registros ficam no seu dispositivo. Se o app for apagado ou os dados locais forem removidos, eles podem não ser recuperáveis. Recomendo compartilhar ou salvar suas memórias favoritas antes de trocar de aparelho.</p>
+              <p class="lang" data-lang="en">Entries stay on your device. If the app is deleted or its local data is removed, they may not be recoverable. Consider sharing or saving your favourite memories before changing devices.</p>
+            </details>
+            <details>
+              <summary><span class="lang is-active" data-lang="pt">Como compartilho uma lembrança?</span><span class="lang" data-lang="en">How do I share a memory?</span></summary>
+              <p class="lang is-active" data-lang="pt">Use o botão de compartilhar no registro desejado. Você escolhe quando e com quem compartilhar; a Gatoteca não publica nada por conta própria.</p>
+              <p class="lang" data-lang="en">Use the share button on the entry you want. You choose when and with whom to share; Catfolio never posts anything on its own.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="section" aria-labelledby="privacy-title">
+        <h2 id="privacy-title" class="section-heading"><span class="lang is-active" data-lang="pt">Privacidade</span><span class="lang" data-lang="en">Privacy</span></h2>
+        <div class="paper-card">
+          <p class="intro lang is-active" data-lang="pt">A sua privacidade é simples: a Gatoteca não coleta, vende, compartilha ou rastreia informações sobre você.</p>
+          <p class="intro lang" data-lang="en">Your privacy is simple: Catfolio does not collect, sell, share, or track information about you.</p>
+
+          <div class="privacy-grid">
+            <article class="privacy-item">
+              <h3><span class="lang is-active" data-lang="pt">Sem conta</span><span class="lang" data-lang="en">No account</span></h3>
+              <p><span class="lang is-active" data-lang="pt">Não há cadastro, login ou perfil de usuário.</span><span class="lang" data-lang="en">There is no sign-up, login, or user profile.</span></p>
+            </article>
+            <article class="privacy-item">
+              <h3><span class="lang is-active" data-lang="pt">Sem rastreamento</span><span class="lang" data-lang="en">No tracking</span></h3>
+              <p><span class="lang is-active" data-lang="pt">Não usamos anúncios, analytics, cookies ou identificadores de rastreamento.</span><span class="lang" data-lang="en">We do not use ads, analytics, cookies, or tracking identifiers.</span></p>
+            </article>
+            <article class="privacy-item">
+              <h3><span class="lang is-active" data-lang="pt">Seus registros ficam com você</span><span class="lang" data-lang="en">Your entries stay with you</span></h3>
+              <p><span class="lang is-active" data-lang="pt">Fotos, anotações e registros da Gatoteca permanecem armazenados no seu dispositivo.</span><span class="lang" data-lang="en">Catfolio photos, notes, and entries remain stored on your device.</span></p>
+            </article>
+            <article class="privacy-item">
+              <h3><span class="lang is-active" data-lang="pt">Permissões com propósito</span><span class="lang" data-lang="en">Purposeful permissions</span></h3>
+              <p><span class="lang is-active" data-lang="pt">Se você permitir, a câmera serve apenas para criar registros. O acesso às fotos serve apenas para você escolher imagens.</span><span class="lang" data-lang="en">If you allow it, the camera is used only to create entries. Photo access is used only when you choose images.</span></p>
+            </article>
+          </div>
+
+          <p class="privacy-note"><span class="lang is-active" data-lang="pt">A Gatoteca não é uma plataforma social e não possui servidores para receber seu conteúdo. Compartilhamentos só acontecem quando você inicia essa ação pelo sistema do seu dispositivo.</span><span class="lang" data-lang="en">Catfolio is not a social platform and has no servers that receive your content. Sharing happens only when you start that action through your device’s system.</span></p>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section-heading"><span class="lang is-active" data-lang="pt">Ainda precisa de ajuda?</span><span class="lang" data-lang="en">Still need a paw?</span></h2>
+        <div class="paper-card">
+          <p class="lang is-active" data-lang="pt">Envie uma mensagem e inclua, se puder, o modelo do seu aparelho, a versão do iOS e uma descrição do que aconteceu.</p>
+          <p class="lang" data-lang="en">Send a message and, if you can, include your device model, iOS version, and a short description of what happened.</p>
+          <a class="contact-button" href="mailto:viktorbruno2006@gmail.com?subject=Catfolio%20Support"><span class="lang is-active" data-lang="pt">Enviar e-mail</span><span class="lang" data-lang="en">Send an email</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <p>Catfolio / Gatoteca</p>
+      <p><span class="lang is-active" data-lang="pt">Última atualização: 29 de julho de 2026</span><span class="lang" data-lang="en">Last updated: July 29, 2026</span></p>
+    </footer>
+
+    <script>
+      const controls = document.querySelectorAll('[data-language]');
+      const languageContent = document.querySelectorAll('[data-lang]');
+
+      function setLanguage(language) {
+        document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en';
+        document.title = language === 'pt'
+          ? 'Catfolio / Gatoteca — Suporte e Privacidade'
+          : 'Catfolio / Gatoteca — Support & Privacy';
+
+        controls.forEach((control) => {
+          control.setAttribute('aria-pressed', String(control.dataset.language === language));
+        });
+        languageContent.forEach((element) => {
+          element.classList.toggle('is-active', element.dataset.lang === language);
+        });
+      }
+
+      controls.forEach((control) => {
+        control.addEventListener('click', () => setLanguage(control.dataset.language));
+      });
+    </script>
+  </body>
+</html>
